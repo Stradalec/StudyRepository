@@ -1,33 +1,32 @@
-/******************************
-* Автор: Калинин А.А.         *
-* Дата: 15.09.2023            *
-* Название: Вариант номер 3   *
-******************************/
+/**********************************
+* Автор: Калинин А.А.             *
+* Дата: 15.09.2023                *
+* Название: Вариант номер 3       *
+* https://onlinegdb.com/5oIoNqDLC *
+**********************************/
 
 #include <iostream>
 #include <math.h>
 
 using namespace std;
 
-int main()
-{
-  double Angle = 0.2443460952; /* The value is changed due to the fact
+int main() {
+  double angle = 0.2443460952; /* The value is changed due to the fact
   that the sin(n) formula works for radians */
-  int InitialSpeed = 750;
-  double Gravity = 9.81;
+  int initialSpeed = 750;
+  double gravity = 9.81;
   cout.precision(8);
-  cout << "Flight time: " << 
-  (2 * InitialSpeed * (sin(Angle))  ) / Gravity << endl;
+  double flightTime = (2 * initialSpeed * (sin(angle))) / gravity;
+  cout << "Flight time: " << flightTime << endl;
   cout.precision(10);
-  cout << "Max flight height: " <<
-  ( (pow(InitialSpeed, 2) * pow(sin(Angle) , 2) ) / (2 * Gravity) ) << endl;
+  double maxFlightHeight = ((pow(initialSpeed, 2) * pow(sin(angle), 2)) / (2 * gravity));
+  cout << "Max flight height: " << maxFlightHeight << endl;
   cout.precision(11);
-  cout << "Max flight range: " <<
-  ( (pow(InitialSpeed, 2) * sin(2 * Angle) ) / Gravity ) << endl;
-  cout << "Radius of curvature of the beginning of the trajectory: " <<
-  pow(InitialSpeed, 2)  / (Gravity * cos(Angle) ) << endl;
-    cout << "Radius of curvatureof the vertex of the trajectory: " <<
-  ( (pow(InitialSpeed, 2) * pow(cos(Angle) , 2) ) / Gravity) << endl;
-
+  double maxFlightRange = ((pow(initialSpeed, 2) * sin(2 * angle)) / gravity);
+  cout << "Max flight range: " << maxFlightRange << endl;
+  double trajectoryRadiusBegin = pow(initialSpeed, 2) / (gravity * cos(angle));
+  cout << "Radius of curvature of the beginning of the trajectory: " << trajectoryRadiusBegin << endl;
+  double trajectoryRadiusVertex = ((pow(initialSpeed, 2) * pow(cos(angle), 2)) / gravity);
+  cout << "Radius of curvature of the vertex of the trajectory: " << trajectoryRadiusVertex << endl;
   return 0;
 }
